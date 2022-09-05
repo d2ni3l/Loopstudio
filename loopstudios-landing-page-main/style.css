@@ -1,0 +1,505 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* CSS RESET */
+
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
+  --Dark-Gray: hsl(0, 0%, 55%);
+  --Very-Dark-Gray: hsl(0, 0%, 41%);
+  --ff-primary: "Alata", sans-serif;
+  --ff-secondary: "Josefin Sans", sans-serif;
+}
+
+html,
+body {
+  font-family: var(--ff-secondary);
+  overflow-x: hidden;
+}
+
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/images/desktop/image-hero.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding: 1rem;
+  color: var(--White);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.8rem;
+}
+
+.mobile-nav {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  right: -0.1rem;
+  display: none;
+}
+
+.mobile-nav-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.3rem;
+  margin-right: 1.3rem;
+}
+
+.mobile-nav-logo {
+  max-width: 10rem;
+}
+.nav-links {
+  display: none;
+}
+
+.close-btn {
+  cursor: pointer;
+}
+
+.menu-btn {
+  cursor: pointer;
+}
+
+.mobile-nav-body ul {
+  list-style: none;
+  font-family: var(--ff-secondary);
+  font-weight: 300;
+  padding-top: 4rem;
+}
+.mobile-nav ul li {
+  padding: 0.7rem 0;
+}
+.mobile-nav-body ul li a {
+  color: var(--White);
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.hero-title {
+  border: 2px solid white;
+  padding: 1rem;
+  max-width: 31.25rem;
+  margin-top: 14rem;
+}
+
+.hero-title h1 {
+  font-weight: 200;
+  font-size: 2.9rem;
+}
+
+.about-section {
+  padding-top: 9rem;
+  padding-bottom: 7rem;
+  margin-inline: 2rem;
+}
+
+.about-container {
+  display: grid;
+}
+
+.about-content {
+  padding-top: 3.5rem;
+  text-align: center;
+  margin-inline: 2rem;
+}
+
+.about-content h2 {
+  font-size: 2.3rem;
+  font-weight: 200;
+  line-height: 0.95;
+  padding-bottom: 1.4rem;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 600;
+  font-family: var(--ff-secondary);
+  color: var(--Very-Dark-Gray);
+}
+
+.creations-section {
+  padding-bottom: 8rem;
+}
+
+.creations-title h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 200;
+  padding-bottom: 2.5rem;
+}
+
+.creations-container {
+  margin-inline: 1.5rem;
+  display: grid;
+  justify-content: center;
+}
+
+.creations-img {
+  position: relative;
+  padding-bottom: 2rem;
+  font-family: var(--ff-secondary);
+}
+
+.creations-img img {
+  background-image: linear-gradient(
+    to left,
+    rgb(232, 34, 34),
+    rgb(255, 0, 0)
+  ) !important;
+  z-index: 1;
+}
+
+.creations-img h3 {
+  color: white;
+  font-weight: 100;
+  font-size: 1.5rem;
+  max-width: 140px;
+  line-height: 1;
+  position: absolute;
+  top: 5.4rem;
+  left: 1rem;
+}
+@media (max-width: 430px) {
+  .creations-img h3 {
+    margin-top: -1.3rem;
+  }
+  @media (min-width: 750px) {
+    .creations-img h3 {
+      margin-top: 6rem;
+    }
+  }
+}
+
+.btn-primary {
+  text-align: center;
+}
+.btn-primary button {
+  border: 1.8px solid var(--Black);
+  padding: 0.44rem 2.8rem;
+  background-color: white;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  font-family: var(--ff-primary);
+  font-weight: 500;
+  color: var(--Black);
+  transition: all 300ms ease-in-out;
+}
+.btn-primary button:hover {
+  background-color: var(--Black);
+  color: var(--White);
+  text-decoration: underline;
+}
+.btn-lg {
+  display: none;
+}
+
+footer {
+  background-color: var(--Black);
+}
+
+.footer-container {
+  padding: 2rem 0;
+  margin-inline: 4rem;
+}
+
+.footer-logo {
+  margin-inline: auto;
+  max-width: 10rem;
+  padding: 1.6rem 0;
+}
+.footer-logo img {
+  margin-left: 1rem;
+}
+
+.footer-links {
+  color: white;
+}
+
+.footer-links ul {
+  list-style-type: none;
+}
+
+.footer-links ul li {
+  padding: 0.6rem 0;
+  text-align: center;
+}
+
+.footer-links ul li a {
+  color: var(--White);
+  text-decoration: none;
+  font-family: var(--ff-primary);
+}
+
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  justify-content: center;
+  margin-left: 3.4rem;
+}
+
+.copy-right {
+  color: var(--Dark-Gray);
+  font-size: 0.85rem;
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  header {
+    padding: 2rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url("/images/desktop/image-hero.jpg");
+  }
+  .nav-container {
+    margin-inline: 2rem;
+  }
+  .hero-title {
+    margin-inline: 1rem;
+    max-width: 37.5rem;
+  }
+  .hero-title h1 {
+    font-size: 3.2rem;
+  }
+  .menu-btn {
+    display: none;
+  }
+  .nav-links {
+    margin-top: -0.5rem;
+    display: block;
+  }
+  .nav-links ul {
+    display: flex;
+    list-style: none;
+    gap: 1.2rem;
+  }
+  .nav-links ul li {
+    transition: all 300ms ease;
+  }
+  .nav-links ul li:hover {
+    text-decoration: underline;
+  }
+  .nav-links ul li a {
+    font-family: var(--ff-secondary);
+    text-decoration: none;
+    color: var(--White);
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+
+  .about-container {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    position: relative;
+  }
+  .about-content {
+    position: absolute;
+    max-width: 530px;
+    right: 0;
+    bottom: 0;
+    background-color: var(--White);
+  }
+  .about-content h2 {
+    font-size: 3rem;
+  }
+  .about-content p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+  .about-img img {
+    width: 100%;
+  }
+  .about-img {
+    display: flex;
+    justify-content: center;
+    min-width: 80rem;
+  }
+
+  .creations-title {
+    margin-inline: 3.6rem;
+  }
+  .creations-title h2 {
+    text-align: left;
+  }
+  .creations-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-inline: 4rem;
+  }
+
+  .creations-img img {
+    min-width: 100%;
+  }
+  .creations-img {
+    padding-bottom: 0.2rem;
+  }
+
+  .creations-img h3 {
+    color: white;
+    font-weight: 100;
+    font-size: 1.5rem;
+    max-width: 140px;
+    line-height: 1;
+    margin-top: calc(20vw - 1rem);
+    height: 50px;
+
+    position: absolute;
+    bottom: -9rem;
+    left: 1rem;
+  }
+
+  .creations-title {
+    display: flex;
+    justify-content: space-between;
+  }
+  .mobile-btn {
+    display: none;
+  }
+
+  .btn-lg {
+    display: block;
+    border: 1.8px solid var(--Black);
+    padding: 0.44rem 2.8rem;
+    background-color: white;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    max-width: 174px;
+    max-height: 40px;
+    margin-top: 0.75rem;
+    font-family: var(--ff-primary);
+    font-weight: 500;
+    color: var(--Black);
+    transition: all 300ms ease-in-out;
+  }
+  .btn-lg:hover {
+    background-color: var(--Black);
+    color: var(--White);
+    text-decoration: underline;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10rem;
+  }
+  .footer-links ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .footer-logo {
+    display: flex;
+    justify-content: end;
+  }
+  .footer-logo img {
+    margin-left: 2.8rem;
+  }
+  .footer-socials {
+    margin-top: 2rem;
+  }
+  .footer-links ul li a {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1090px) {
+  .creations-img h3 {
+    margin-top: calc(25vw - 1rem);
+  }
+  .nav-container {
+    margin-inline: 6rem;
+  }
+  .hero-title {
+    margin-inline: 5rem;
+  }
+  .nav-links ul {
+    gap: 1.7rem;
+  }
+}
