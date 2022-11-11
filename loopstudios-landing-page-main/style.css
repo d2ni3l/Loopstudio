@@ -114,6 +114,7 @@ header {
   bottom: 0;
   right: -0.1rem;
   padding-top: 2.2rem;
+  display:none;
 }
 
 .mobile-nav-header {
